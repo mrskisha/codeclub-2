@@ -19,7 +19,7 @@ var src_default = {
                },
            });
        }
-       else{
+       else { 
            return new Response('Error Worker! Wrong Method', {
                headers: {
                    'content-type': 'text/plain',

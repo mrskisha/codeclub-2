@@ -12,7 +12,31 @@
 
 // Homework #2 Use function to return random response
 
-export default {
+// Code Club Assignment 1
+var homework1 = {
+	async fetch(request, env, ctx) {
+		let body = {};
+		let message;
+
+		if (request.method == "POST") {
+					message = "Awesome job at your POST!";
+			} 
+		else {
+					message = "You didn't POST.";
+			}
+
+		const OUTPUT = {
+			result: message,
+		};
+		return new Response (JSON.stringify (OUTPUT), {
+					headers: {
+						'content-type': 'application/json;charset=UTF-8',
+					},
+				});
+	}
+}
+
+var homework2 = {
 	async fetch(request, env, ctx) {
 		const kishaChoices = {
 			1: "Kisha's random choice",
@@ -28,4 +52,8 @@ export default {
 
 		return new Response(randomResponse, { status: 200 })
 	},
+};
+
+export {
+	homework1 as default 
 };

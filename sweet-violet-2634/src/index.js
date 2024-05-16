@@ -56,18 +56,19 @@ var homework2 = {
 };
 
 
-// Code Club Homework3
+// Code Club Homework3 Set conditional if bot score < 30, then redirect to throwaway site
 var homework3 = {
 
 	async fetch(request, env, ctx) {
 		if (request.method === "GET") {
 			const myOrigin = "www.kishacorp.com";
-			const myRedirect = "https://httpbin.org/get";
+			const throwaway = "https://httpbin.org/get";
+			let finalResponse = "";
 			
 		if (request.cf.botManagement.score < 30) {
-				finalResponse = myOrigin;
+				finalResponse = throwaway;
 			} else {
-				finalResponse = myRedirect;
+				finalResponse = myOrigin;
 			}
 			return new Response(finalResponse);
 		} else {

@@ -10,6 +10,8 @@
 
 // src/index.js
 
+// Homework #2 Use function to return random response
+
 export default {
 	async fetch(request, env, ctx) {
 		const kishaChoices = {

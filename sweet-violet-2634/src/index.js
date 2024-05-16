@@ -61,7 +61,7 @@ var homework3 = {
 
 	async fetch(request, env, ctx) {
 		if (request.method === "GET") {
-			const myOrigin = "https://www.kishacorp.com";
+			const myOrigin = "https://www.kishacodes.com";
 			const throwaway = "https://httpbin.org/get";
 			let finalResponse = "";
 			

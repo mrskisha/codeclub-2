@@ -55,5 +55,5 @@ var homework2 = {
 };
 
 export {
-	homework1 as default 
+	homework2 as default 
 };

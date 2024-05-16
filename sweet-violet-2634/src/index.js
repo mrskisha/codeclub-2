@@ -12,7 +12,7 @@
 
 // Homework #2 Use function to return random response
 
-// Code Club Assignment 1
+// Code Club Homework 1
 var homework1 = {
 	async fetch(request, env, ctx) {
 		let body = {};
@@ -36,6 +36,7 @@ var homework1 = {
 	}
 }
 
+// Code Club Homework 2 Create a random response to be displayed when worker is called
 var homework2 = {
 	async fetch(request, env, ctx) {
 		const kishaChoices = {
@@ -54,6 +55,27 @@ var homework2 = {
 	},
 };
 
+
+// Code Club Homework3
+var homework3 = {
+
+	async fetch(request, env, ctx) {
+		if (request.method === "GET") {
+			const myOrigin = "www.kishacorp.com";
+			const myRedirect = "https://httpbin.org/get";
+			
+		if (request.cf.botManagement.score < 30) {
+				finalResponse = myOrigin;
+			} else {
+				finalResponse = myRedirect;
+			}
+			return new Response(finalResponse);
+		} else {
+			console.log("Error")
+		}
+}
+}
+
 export {
-	homework2 as default 
+	homework3 as default 
 };

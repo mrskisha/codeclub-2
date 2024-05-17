@@ -65,7 +65,7 @@ var homework3 = {
 			const throwaway = "https://httpbin.org/get";
 			let finalResponse = "";
 			
-		if (request.cf.botManagement.score < 30) {
+		if (request.cf.botManagement && request.cf.botManagement.score < 30) {
 				finalResponse = throwaway;
 			} else {
 				finalResponse = myOrigin;

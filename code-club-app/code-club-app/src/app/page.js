@@ -16,7 +16,7 @@ export async function GET(request) {
     return kishaChoices[responseInteger];
   };
                 
-  let response = getRequest ? 'Generated Random Number: ${randomResponse(kishaChoices, max)}' : "use GET";
+  let response = getRequest ? `Generated Random Number: ${randomResponse(kishaChoices, max)}` : "use GET";
 
   return new Response(response);
 }

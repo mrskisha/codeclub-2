@@ -1,8 +1,10 @@
 
+
+import { getRequestContext } from '@cloudflare/next-on-pages'
+
 export let runtime = 'edge'
 
 export async function GET(request) {
-  let getRequest = (request) => request.method === "GET";
   let kishaChoices = {
     1: "Kisha's random choice",
     2: "Kisha's second random choice",
@@ -11,13 +13,9 @@ export async function GET(request) {
   };
 
   let max = 4;
-  let randomResponse = (kishaChoices, max) => {
-    let responseInteger = Math.ceil(Math.random() * max);
-    return kishaChoices[responseInteger];
-  };
-                
-  let response = getRequest ? `Generated Random Number: ${randomResponse(kishaChoices, max)}` : "use GET";
-
-  return new Response(response);
+  let responseInteger = Math.floor(Math.random() * max);
+  let responseMsg = kishaChoices[responseInteger];                
+  
+  return new Response(responseMsg);
 }
 
